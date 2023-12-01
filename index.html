@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script defer src="./script.js"></script>
+	<title>Тест</title>
+	
+</head>
+<body>
+    <div id="counter">
+        <h1> Счетчик {{counter}}</h1>
+    </div>
+
+    <div id="event-reverse">
+        <p> {{ message }} </p>
+        <button v-on:click="reverse"> Перевернуть текст </button>
+    </div>
+
+    <div id="conditional">
+        <span v-if="isSeen"> Меня видно </span>
+    </div>
+
+
+    <div id="list">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+
+
+    <div id="example">
+        <p>
+            Задай вопрос
+            <input v-model="question"/>
+            <p>
+                {{ answer }}
+            </p>
+        </p>
+    </div>
+
+
+    <div id="todo-list-app">
+        <ol>
+            <todo-item-new-test 
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id"            
+            > </todo-item-new-test>
+        </ol>
+    </div>
+
+
+</body>
+</html>   
